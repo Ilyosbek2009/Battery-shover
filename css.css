@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.battery{
+    width: 300px;
+    height: 90px;
+    border: 1px solid #c0c0c0;
+    border-radius: 6px;
+    padding: 10px;
+    position: relative;
+}
+.battery::after{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 40px;
+    background: #fff;
+    position:absolute;
+    right: -22px;
+    top: 22px;
+    border: 1px solid #c0c0c0;
+    border-radius: 0 4px 4px 0;
+    border-left-color: #fff;
+}
+
+#battery_level{
+    width: 30%;
+    height: 100%;
+    transition: all ease 1s;
+    background-image: linear-gradient(to bottom,blue, rgb(0, 38, 255),rgb(0, 81, 255),rgb(0, 132, 255));
+}
+.battery_level_digit{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    text-align: center;
+    font-size: 70px;
+    line-height: 92px;
+}
+
+#battery_level.battery_animation{
+    animation-name: battery_charget;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes battery_charget {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+
+
